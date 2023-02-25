@@ -1,0 +1,49 @@
+package Iframe;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Iframe1 
+{
+	public static void main(String[] args) throws InterruptedException 
+	{
+		
+	//step-I :
+	//parameter-1 : Name of browser
+	//parameter-2 : path of chromedriver.exe file
+	
+	System.setProperty("webdriver.chrome.driver","D:\\java\\Selenium\\chromedriver_win32\\chromedriver.exe");
+	
+	//Step-II :
+	
+	//create object of chromedriver class with reference of webdriver interface
+	
+	WebDriver Driver=new  ChromeDriver();
+	
+	//Enter URL / Open Browser
+	Driver.get("https://www.w3schools.com/js/tryit.asp?filename=tryjs_myfirst");
+	
+	//maximize web-page
+	Driver.manage().window().maximize();
+	
+	//wait
+	Thread.sleep(2000);
+	
+	//to switch to frame (String Framename)
+	Driver.switchTo().frame("iframeResult");
+	
+	//wait
+	Thread.sleep(2000);
+
+	
+	//click me to display date and time button
+	Driver.findElement(By.xpath("//button[@type='button']")).click();
+	
+	
+	
+	
+	
+
+}
+}
